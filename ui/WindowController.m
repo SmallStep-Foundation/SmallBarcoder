@@ -1504,6 +1504,11 @@
 
 #pragma mark - SSApplicationMenuDelegate
 
+- (void)showAbout:(id)sender {
+    (void)sender;
+    [SSAboutPanel showWithAppName:@"Small Barcode Reader" version:@"1.0"];
+}
+
 - (void)menuOpenImage:(id)sender {
     [self openImage:sender];
 }

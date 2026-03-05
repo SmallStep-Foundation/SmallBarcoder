@@ -8,6 +8,9 @@ include $(GNUSTEP_MAKEFILES)/common.make
 
 APP_NAME = SmallBarcodeReader
 
+before-all::
+	mkdir -p Resources && cp -f ../SmallStepLib/Resources/logo.png Resources/logo.png 2>/dev/null || true
+
 # Check if dynamic-only build is requested
 DYNAMIC_ONLY ?= 0
 
@@ -123,7 +126,8 @@ ifneq ($(ZINT_INCLUDE),)
 endif
 
 SmallBarcodeReader_RESOURCE_FILES = \
-	MainMenu.gorm
+	MainMenu.gorm \
+	Resources/logo.png
 
 SmallBarcodeReader_INCLUDE_DIRS = \
 	-I. \
